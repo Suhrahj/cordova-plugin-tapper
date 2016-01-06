@@ -21,6 +21,8 @@ public class Tapper extends CordovaPlugin {
 	View view;
 	static final boolean CORDOVA_4 = Integer.valueOf(CordovaWebView.CORDOVA_VERSION.split("\\.")[0]) >= 4;
 	
+	// input values
+	final static int VIBRATE_TYPE_INDEX = 0;
 	
 	@Override
 	public void initialize(CordovaInterface cordova, CordovaWebView webView) {
@@ -49,4 +51,23 @@ public class Tapper extends CordovaPlugin {
         }
         return true;
     }
+	
+	void isFeedbackEnabled(CallbackContext callbackContext) {
+		ContentResolver cr = cordova.getActivity().getContentResolver();
+
+		// check if is feedback allowed by user, 1 mean allowed, 0 mean disabled and -1 mean unspecified
+		int haptic = Settings.System.getInt(cr, Settings.System.HAPTIC_FEEDBACK_ENABLED, -1);
+		int acoustic = Settings.System.getInt(cr, Settings.System.SOUND_EFFECTS_ENABLED, -1);
+		
+		// map 1 to true, 0 to false and -1 to null
+		JSONObject respond = new JSONObject();
+		try {
+			respond.put("haptic", haptic == -1 ? null : haptic == 1);
+			respond.put("acoustic", acoustic == -1 ? null : acoustic == 1);
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		
+		callbackContext.success(respond);
+	}
 }
