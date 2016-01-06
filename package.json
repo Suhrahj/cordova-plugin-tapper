@@ -1,0 +1,25 @@
+{
+  "name": "cordova-plugin-tapper",
+  "version": "0.0.2",
+  "description": "Native button tap sound",
+  "cordova": {
+    "id": "cordova-plugin-tapper",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git"
+  },
+  "keywords": [
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0"
+    }
+  ],
+  "author": "Dungeoner",
+  "license": "Simplified BSD License"
+}
