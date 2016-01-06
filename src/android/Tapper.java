@@ -24,23 +24,7 @@ public class Tapper extends CordovaPlugin {
 	// input values
 	final static int VIBRATE_TYPE_INDEX = 0;
 	
-	@Override
-	public void initialize(CordovaInterface cordova, CordovaWebView webView) {
-    	audioManager = (AudioManager) cordova.getActivity().getSystemService(Context.AUDIO_SERVICE);
-		
-    	super.initialize(cordova, webView);
-		
-		if(CORDOVA_4) {
-			try {
-				view = (View) webView.getClass().getMethod("getView").invoke(webView);
-			} catch(Exception e) {
-				view = (View) webView;
-			}
-		} else
-			view = (View) webView;
-		
-    	view.setSoundEffectsEnabled(false);
-	}
+	
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
