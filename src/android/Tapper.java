@@ -27,9 +27,9 @@ public class Tapper extends CordovaPlugin {
 	@Override
 	public void initialize(CordovaInterface cordova, CordovaWebView webView) {
     	audioManager = (AudioManager) cordova.getActivity().getSystemService(Context.AUDIO_SERVICE);
-    	//Log.w("DF", "init");
+		
     	super.initialize(cordova, webView);
-		// compability with cordova-android 4.x together with cordova-android 3.x compability
+		
 		if(CORDOVA_4) {
 			try {
 				view = (View) webView.getClass().getMethod("getView").invoke(webView);
@@ -38,35 +38,19 @@ public class Tapper extends CordovaPlugin {
 			}
 		} else
 			view = (View) webView;
-    	// this disable default webView sound on touch and click events; does not influence dialogs or other activities
+		
     	view.setSoundEffectsEnabled(false);
 	}
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if (action.equals("Sound")) {
-        	Sound();
-        } else if (action.equals("Vibrate")) {
-        	Vibrate(args);
-        } else if (action.equals("isFeedbackEnabled")) {
-        	isFeedbackEnabled(callbackContext);
+        	audioManager.playSoundEffect(SoundEffectConstants.CLICK);
         } else {
             return false;
         }
         return true;
     }
-
-	void Sound() {
-        audioManager.playSoundEffect(SoundEffectConstants.CLICK);
-	}
-	
-	void Vibrate(JSONArray args) {
-		try {
-			view.performHapticFeedback(args.getInt(VIBRATE_TYPE_INDEX));
-		} catch (JSONException e) {
-			e.printStackTrace();
-		}
-	}
 	
 	void isFeedbackEnabled(CallbackContext callbackContext) {
 		ContentResolver cr = cordova.getActivity().getContentResolver();
