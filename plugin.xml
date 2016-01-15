@@ -33,7 +33,7 @@
 	
 	<platform name="ios">
     
-    <config-file target="config.xml" parent="/widget">
+    <config-file target="config.xml" parent="/*">
       <feature name="Tapper">
         <param name="ios-package" value="Tapper" />
       </feature>
