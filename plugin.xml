@@ -39,7 +39,8 @@
       </feature>
     </config-file>
 
-    <header-file src="src/ios/Tapper.h" target-dir="TapperPlugin"/>
-    <source-file src="src/ios/Tapper.m" target-dir="TapperPlugin"/>
+    <header-file src="src/ios/Tapper.h"/>
+    <source-file src="src/ios/Tapper.m"/>
+    <framework src="AudioToolbox.framework" weak="true" />
   </platform>
 </plugin>
