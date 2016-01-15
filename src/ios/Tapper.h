@@ -1,6 +1,6 @@
 #import <Cordova/CDV.h>
 
-@interface HWPHello : CDVPlugin
+@interface Tapper : CDVPlugin
 
 - (void) Sound:(CDVInvokedUrlCommand*)command;
 
