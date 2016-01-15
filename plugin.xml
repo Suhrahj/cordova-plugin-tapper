@@ -11,6 +11,8 @@
 	    <engine name="cordova" version=">=3.0"/>
 	</engines>
 	
+	<asset src="Tapper.js" target="Tapper.js"/>
+	
 	<js-module name="Tapper" src="Tapper.js">
 		<clobbers target="window.plugins.tapper" />
 	</js-module>
