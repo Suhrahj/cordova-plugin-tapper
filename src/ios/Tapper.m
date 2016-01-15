@@ -8,7 +8,7 @@
                                
     AudioServicesPlaySystemSound(1104);
 
-    [self success:nil callbackId:nil
+    [self success:nil callbackId:nil];
 }
 
 @end
