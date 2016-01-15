@@ -1,5 +1,4 @@
 #import "Tapper.h"
-#import <AudioToolbox/AudioToolbox.h>
 
 @implementation Tapper
 
