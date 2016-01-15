@@ -1,4 +1,4 @@
-#import <AudioToolbox/AudioServices.h>
+#import <AudioToolbox/AudioToolbox.h>
 #import <Cordova/CDV.h>
 
 @interface Tapper : CDVPlugin
