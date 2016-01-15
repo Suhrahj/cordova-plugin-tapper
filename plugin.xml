@@ -8,7 +8,7 @@
 	<keywords>feedback,haptic,acoustic,aural,tactile,sound,vibrate,key,button,touch,tap,vibration,vibrating,ux,user-experience</keywords>
 
 	<engines>
-	    <engine name="cordova" version=">=3.4.0"/>
+	    <engine name="cordova" version=">=3.0"/>
 	</engines>
 	
 	<js-module name="Tapper" src="Tapper.js">
