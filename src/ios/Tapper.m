@@ -8,7 +8,14 @@
                                
     AudioServicesPlaySystemSound(1104);
 
-    [self success:nil callbackId:nil];
+    NSString* callbackId = [command callbackId];
+    NSString* msg = @"return";
+
+    CDVPluginResult* result = [CDVPluginResult
+                               resultWithStatus:CDVCommandStatus_OK
+                               messageAsString:msg];
+
+    [self success:result callbackId:callbackId];
 }
 
 @end
