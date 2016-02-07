@@ -8,7 +8,7 @@
                                
     AudioServicesPlaySystemSound(1104);
 
-    NSString* callbackId = @"return";
+    NSString* callbackId = [command callbackId];
     NSString* msg = @"return";
 
     CDVPluginResult* result = [CDVPluginResult
