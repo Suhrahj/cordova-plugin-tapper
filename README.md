@@ -1,6 +1,6 @@
 A plugin for creating native click sound for both Android and iOS.
 
->>example:
+>example:
 
 ```
 $("button").bind("tap", tapHandler);
